@@ -11,6 +11,7 @@ validate_installation () {
         echo "Installing $2 .......... SUCCESS"
     else
         echo "Installing $2 .......... FAILURE"
+        exit 1;
     fi
 }
 
