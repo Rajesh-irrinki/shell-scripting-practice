@@ -4,7 +4,7 @@ log_folder=/var/log/shell
 log_file=$log_folder/$0.log
 user_id=$UID
 
-if [ $user_id -nq 0 ]; then
+if [ $user_id -ne 0 ]; then
     echo "Please run the script as root user"
     exit 1;
 fi
