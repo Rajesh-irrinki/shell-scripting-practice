@@ -5,4 +5,4 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-echo -e "$Y My $N $G name is $N: $R Rajesh$N"
+echo -e "$Y My$N $Gname is $N: $R Rajesh$N"
