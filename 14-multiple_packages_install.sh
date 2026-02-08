@@ -20,9 +20,9 @@ validate_installation() {
     fi
 }
 
-for i in $@
+for package in $@
 do
-    echo "############## Installing $i ##############"
-    dnf install $i -y &>> $log_file
-    validate_installation $? $i
+    echo "############## Installing $package ##############"
+    dnf install $package -y &>> $log_file
+    validate_installation $? $package
 done
