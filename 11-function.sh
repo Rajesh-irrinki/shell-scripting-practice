@@ -11,6 +11,7 @@ validate_installation () {
         echo "Installing $2 .......... SUCCESS"
     else
         echo "Installing $2 .......... FAILURE"
+    fi
 }
 
 echo "Installing Nginx ......."
