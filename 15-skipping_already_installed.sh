@@ -26,7 +26,7 @@ do
    if [ $? -eq 0 ]; then
         echo "$package already installed .... SKIPPING" | tee -a $log_file 
     else 
-        echo "############## Installing $package ##############"
+        echo "############## Installing $package ##############" &>> $log_file
         dnf install $package -y &>> $log_file
         validate_installation $? $package
     fi
