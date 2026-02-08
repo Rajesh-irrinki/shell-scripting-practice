@@ -22,7 +22,7 @@ validate_installation() {
 
 for i in $@
 do
-    echo "############## Installing $1 ##############"
-    dnf install $1 -y
+    echo "############## Installing $i ##############"
+    dnf install $i -y
     validate_installation $? $1 
 done
