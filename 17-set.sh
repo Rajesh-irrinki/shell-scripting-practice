@@ -15,6 +15,8 @@ if [ $user_id -ne 0 ]; then
     exit 1;
 fi
 
+mkdir -p $log_folder
+
 for package in $@
 do
     dnf list installed $package &>> $log_file
