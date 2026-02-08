@@ -13,16 +13,16 @@ mkdir -p $log_folder
 
 validate_installation() {
     if [ $1 -ne 0 ]; then
-        echo "Installing $2 is .......... FAILURE"
+        echo "Installing $2 is .......... FAILURE" | tee -a $log_file
         exit 1;
     else
-        echo "Installing $2 is .......... SUCCESS"
+        echo "Installing $2 is .......... SUCCESS" | tee -a $log_file
     fi
 }
 
 for i in $@
 do
     echo "############## Installing $i ##############"
-    dnf install $i -y
-    validate_installation $? $1 
+    dnf install $i -y &>> $log_file
+    validate_installation $? $i
 done
