@@ -18,7 +18,7 @@ fi
 for package in $@
 do
     dnf list installed $package &>> $log_file
-    if [ $? -ne 0 ]; then
+    if [ $? -eq 0 ]; then
         echo "########### Installing $package ###########" &>> $log_file
         dnf install $package -y &>> $log_file
         echo -e "$package installing....... $G SUCCESS $N" &>> $log_file
