@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e #ERR
+
 trap 'echo "There is an error at $LINENO, command: $BASH_COMMAND"' 
 
 echo "Hello World!!"
