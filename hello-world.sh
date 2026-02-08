@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # this is commented line, will not be executed by the shell
 echo "Hello World from the Rajeshirrinki" # echo used to print text on the console
