@@ -15,14 +15,14 @@ validate_installation () {
     fi
 }
 
-echo "Installing Nginx ......."
+echo "#########################  Installing Nginx #########################"
 dnf install nginx -y
 validate_installation $? Nginx
 
-echo "Installing MySQL ........"
+echo "#########################  Installing MySQL #########################"
 dnf install mysql -y
 validate_installation $? MySQL
 
-echo "Installing NodeJs ........"
+echo "######################### Installing NodeJs #########################"
 dnf install nodejs -y
 validate_installation $? NodeJs
