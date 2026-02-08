@@ -24,3 +24,5 @@ do
         echo -e "$package installing....... $G SUCCESS $N" &>> $log_file
     else
         echo -e "$package already installed....... $Y SKIPPING $N" &>> $log_file
+    fi
+done
