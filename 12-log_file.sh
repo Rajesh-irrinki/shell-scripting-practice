@@ -12,9 +12,9 @@ fi
 
 validate_installation () {
     if [ $1 -eq 0 ]; then
-        echo "Installing $2 .......... SUCCESS" >> $log_file
+        echo "Installing $2 .......... SUCCESS" &>> $log_file
     else
-        echo "Installing $2 .......... FAILURE" >> $log_file
+        echo "Installing $2 .......... FAILURE" &>> $log_file
         exit 1;
     fi
 }
