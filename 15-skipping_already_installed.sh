@@ -24,7 +24,7 @@ for package in $@
 do
    dnf list installed $package &>> $log_file
    if [ $? -eq 0 ]; then
-        echo "$package already installed .... SKIPPING" &>> $log_file
+        echo "$package already installed .... SKIPPING" | tee -a $log_file 
     else 
         echo "############## Installing $package ##############"
         dnf install $package -y &>> $log_file
