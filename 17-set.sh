@@ -10,7 +10,7 @@ user_id=$UID
 log_folder=/var/log/shell
 log_file=$log_folder/$0.log
 
-if [ user_id -ne 0 ]; then
+if [ $user_id -ne 0 ]; then
     echo -e "$R Please run the script as root user $N" &>> $log_file
     exit 1;
 fi
