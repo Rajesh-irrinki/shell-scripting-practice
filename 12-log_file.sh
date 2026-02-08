@@ -12,21 +12,21 @@ fi
 
 validate_installation () {
     if [ $1 -eq 0 ]; then
-        echo "Installing $2 .......... SUCCESS"
+        echo "Installing $2 .......... SUCCESS" >> $log_file
     else
-        echo "Installing $2 .......... FAILURE"
+        echo "Installing $2 .......... FAILURE" >> $log_file
         exit 1;
     fi
 }
 
 echo "#########################  Installing Nginx #########################"
 dnf install nginx -y  >> $log_file 
-validate_installation $? Nginx &> $log_file
+validate_installation $? Nginx 
 
 echo "#########################  Installing MySQL #########################"
 dnf install mysql -y >> $log_file
-validate_installation $? MySQL &> $log_file
+validate_installation $? MySQL 
 
 echo "######################### Installing NodeJs #########################"
 dnf install nodejs -y >> $log_file
-validate_installation $? NodeJs &> $log_file
+validate_installation $? NodeJs 
