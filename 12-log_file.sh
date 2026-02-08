@@ -21,12 +21,12 @@ validate_installation () {
 
 echo "#########################  Installing Nginx #########################"
 dnf install nginx -y  >> $log_file 
-validate_installation $? Nginx
+validate_installation $? Nginx &> $log_file
 
 echo "#########################  Installing MySQL #########################"
 dnf install mysql -y >> $log_file
-validate_installation $? MySQL
+validate_installation $? MySQL &> $log_file
 
 echo "######################### Installing NodeJs #########################"
 dnf install nodejs -y >> $log_file
-validate_installation $? NodeJs
+validate_installation $? NodeJs &> $log_file
