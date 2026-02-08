@@ -22,10 +22,9 @@ validate_installation() {
 
 for package in $@
 do
-   dnf list installed $package
+   dnf list installed $package &>> $log_file
    if [ $? -eq 0 ]; then
         echo "$package already installed .... SKIPPING" &>> $log_file
-        exit 1;
     else 
         echo "############## Installing $package ##############"
         dnf install $package -y &>> $log_file
