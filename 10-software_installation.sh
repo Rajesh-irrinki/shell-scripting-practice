@@ -15,3 +15,27 @@ dnf module enable nodejs:20 -y
 echo "Installing the nodejs ........."
 dnf install nodejs -y
 
+if [ $? -eq 0 ]; then
+    echo "Installing NodeJs ............. SUCCESS"
+else
+    echo "Installing Nodejs ............. FAILURE"
+fi
+
+echo "Installing MySQL .............."
+dnf install mysql -y
+
+if [ $? -eq 0 ]; then
+    echo "Installing mysql .............. SUCCESS"
+else
+    echo "Installing mysql .............. FAILURE"
+fi
+
+echo "Installing nginx ..........."
+dnf install nginx -y 
+
+if [ $? -eq 0 ]; then
+    echo "Installing Nginx ............... SUCCESS"
+else
+    echo "Installing Nginx ............... FAILURE"
+fi
+
