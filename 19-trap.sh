@@ -16,6 +16,8 @@ if [ $user_id -ne 0 ] ; then
     exit 1;
 fi
 
+if [ $# -eq 0 ]; then
+    echo -e "$R Please provide required Package name for Installing.... $N " | tee -a $log_file
 mkdir -p $log_folder
 
 for package in $@
