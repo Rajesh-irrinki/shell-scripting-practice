@@ -27,7 +27,7 @@ do
     dnf list installed $package &>> $log_file
     if [ $? -ne 0 ]; then
         echo -e "$package is not installed, ........ $G INSTALLING NOW $N" &>> $log_file
-        dnf install $package &>> $log_file &>> $log_file
+        dnf install $package -y &>> $log_file
     else
         echo -e "$package is already installed ......$Y SKIPPING $N " &>> $log_file
     fi
