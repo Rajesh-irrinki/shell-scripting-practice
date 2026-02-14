@@ -18,6 +18,8 @@ fi
 
 if [ $# -eq 0 ]; then
     echo -e "$R Please provide required Package name for Installing.... $N " | tee -a $log_file
+fi
+
 mkdir -p $log_folder
 
 for package in $@
