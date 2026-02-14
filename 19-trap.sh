@@ -20,7 +20,7 @@ mkdir -p $log_folder
 
 for package in $@
 do
-    dnf list installed $package
+    dnf list installed $package &>> $log_file
     if [ $? -ne 0 ]; then
         echo -e "$package is not installed, ........ $G INSTALLING NOW $N" &>> $log_file
         dnf install $package &>> $log_file &>> $log_file
