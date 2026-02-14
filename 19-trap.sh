@@ -6,10 +6,10 @@ trap 'echo "there is an error while executing the script at $LINENO line number 
 user_id=$UID
 log_folder=/var/log/shell/
 log_file=$log_folder/$0.log
-R=\e[31m
-G=\e[32m
-Y=\e[33m
-N=\e[0m
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 if [ $user_id -ne 0 ] ; then
     echo -e " $R Please run the script with root access $N " | tee -a $log_file
