@@ -5,7 +5,7 @@ start_time=$(date +%s)
 cd $script_dir # variable not present in parent script
 echo " " [ $(date '+%F %T') ] " $pwd"
 echo " " [ $(date '+%F %T') ] " Parent script is calling child script.."
-source 21-child-script.sh
+source ./21-child-script.sh
 cd $script_dir # variable will be sourced from child script
 echo " " [ $(date '+%F %T') ] " $pwd"
 end_time=$(date +%s)
