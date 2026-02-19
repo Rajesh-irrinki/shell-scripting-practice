@@ -23,5 +23,5 @@ else
         echo "deleting the file: $file_path" | tee -a $log_file
         rm -f $file_path | tee -a $log_file
         echo "deleted file: $file_path" | tee -a $log_file
-    done <<< $file_to_delete
+    done <<< $files_to_delete
 fi
