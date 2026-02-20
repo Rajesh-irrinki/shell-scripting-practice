@@ -35,6 +35,7 @@ fi
 
 if [ ! -d $dest_dir ]; then
     echo -e "[ $print_date ] $dest_dir $R doesn't exists $N" | tee -a $log_file
+    exit 1
 fi
 
 files=$(find "$source_dir" -name "*.log" -type f -mtime +$days)
