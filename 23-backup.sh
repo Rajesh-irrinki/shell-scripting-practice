@@ -47,7 +47,7 @@ if [ -z "$files" ]; then
     echo -e "[ $print_date ] No files to archieve ... $Y SKIPPING $N" | tee -a $log_file
     exit 1 
 else
-    echo "[ $print_date ] Log files found in $source_dir : \ $files" | tee -a $log_file
+    echo "[ $print_date ] Log files found in $source_dir : $files" | tee -a $log_file
     timestamp=$(date +'%F-%H-%M-%S')
     zip_file_name="$dest_dir/app-logs-$timestamp.tar.gz"
     echo "[ $print_date ] Archeive name: $zip_file_name" | tee -a $log_file
