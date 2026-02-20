@@ -53,6 +53,7 @@ else
     tar -cvzf "$zip_file_name" "$files" &>>$log_file
 
     if [ -f $zip_file_name ]; then
+        echo "[ $print_date ] Archeived file name : $zip_file_name"
         echo -e "[ $print_date ] Archeival process ... $G SUCCESS $N" | tee -a $log_file
         while IFS= read -r filepath;
         do
