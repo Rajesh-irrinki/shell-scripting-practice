@@ -37,7 +37,7 @@ if [ ! -d $dest_dir ]; then
     exit 1
 fi
 
-files=$(find $source -name "*.log" -type f -mtime +$days)
+files=$(find "$source" -name "*.log" -type f -mtime +$days)
 echo "[ $print_date ] Archieve process started...." | tee -a $log_file
 echo "[ $print_date ] Source directory : $source_dir" | tee -a $log_file
 echo "[ $print_date ] Destination directory : $dest_dir" | tee -a $log_file
