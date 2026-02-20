@@ -14,7 +14,7 @@ print_date=$(date +'%F %T')
 mkdir -p $logs_dir
 
 if [ $UID -ne 0 ]; then
-    echo -e "[ $print_date ]$R Please run the script with the root access $N" | tee -a $log_file
+    echo -e "[ $print_date ] $R Please run the script with the root access $N" | tee -a $log_file
     exit 1
 fi
 
@@ -28,12 +28,12 @@ if [ $# -lt 2 ]; then
 fi
 
 if [ ! -d $source_dir ]; then
-    echo -e "[ $print_date ]$R $source_dir doesn't exists" | tee -a $log_file
+    echo -e "[ $print_date ] $R $source_dir doesn't exists" | tee -a $log_file
     exit 1;
 fi
 
 if [ ! -d $dest_dir ]; then
-    echo -e "[ $print_date ]$R $dest_dir doesn't exists" | tee -a $log_file
+    echo -e "[ $print_date ] $R $dest_dir doesn't exists" | tee -a $log_file
     exit 1
 fi
 
@@ -53,7 +53,7 @@ else
     tar -cvzf "$zip_file_name" "$files" &>>$log_file
 
     if [ -f $zip_file_name ]; then
-        echo "[ $print_date ] Archeived file name : $zip_file_name"
+        echo "[ $print_date ] Archeived file name : $zip_file_name" | tee -a $log_file
         echo -e "[ $print_date ] Archeival process ... $G SUCCESS $N" | tee -a $log_file
         while IFS= read -r filepath;
         do
