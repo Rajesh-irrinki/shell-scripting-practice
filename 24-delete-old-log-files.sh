@@ -48,20 +48,20 @@ if [ -z $files ]; then
     exit 1
 else
     timestamp=$(date +'%F-%H-%M-%S')
-    echo "[ $print_date ] Files found at $source_dir : $files"
+    echo "[ $print_date ] Files found at $source_dir : $files" | tee -a $log_file
     zip_file_name=$dest_dir/app-logs-$timestamp.log
     tar -cvzf "$zip_file_name" "$files" &>>$log_file
 
     if [ -f $zip_file_name ]; then
-        echo -e "[ $print_date ] Archeival process ... $G SUCCESS $N"
+        echo -e "[ $print_date ] Archeival process ... $G SUCCESS $N" | tee -a $log_file
         while IFS= read -r filepath;
         do
-            echo "[ $print_date ] Removing the $filepath file..."
-            rm -f $filepath
-            echo "[ $print_date ] Removed the $filepath file"
+            echo "[ $print_date ] Removing the $filepath file..." | tee -a $log_file
+            rm -f $filepath &>>$log_file
+            echo "[ $print_date ] Removed the $filepath file" | tee -a $log_file
         done <<< $files
     else
-        echo -e "[ $print_date ] Archeival process ... $R FAILED $N"
+        echo -e "[ $print_date ] Archeival process ... $R FAILED $N" | tee -a $log_file
         exit 1
     fi
 fi 
