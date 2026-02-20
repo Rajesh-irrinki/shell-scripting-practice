@@ -19,10 +19,10 @@ if [ $user_id -ne 0 ]; then
 fi
 
 if [ $# -lt 2 ]; then
-    usage
+    print_usage
 fi
 
-usage() {
+print_usage() {
     echo -e "$R sudo backup <SOURCE_DIR> <DESTINATION_DIR> <DAYS> deafualt:15 days $N" | tee -a $log_file
     exit 1
 }
