@@ -14,4 +14,4 @@ do
     fi 
 done <<< $disk_usage
 
-echo "$Message"
+echo -e "$Message"
