@@ -18,14 +18,16 @@ if [ $user_id -ne 0 ]; then
     exit 1
 fi
 
-if [ $# -lt 2 ]; then
-    print_usage
-fi
-
 print_usage() {
     echo -e "$R sudo backup <SOURCE_DIR> <DESTINATION_DIR> <DAYS> deafualt:15 days $N" | tee -a $log_file
     exit 1
 }
+
+if [ $# -lt 2 ]; then
+    print_usage
+fi
+
+
 
 if [ ! -d $source_dir ]; then
     echo -e "$source_dir $ doesn't exists $N" | tee -a $log_file
