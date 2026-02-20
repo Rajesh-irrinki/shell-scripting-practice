@@ -8,7 +8,7 @@ Y="\e[33m"
 N="\e[0m"
 source_dir=$1
 dest_dir=$2
-$days=${3:-15}
+days=${3:-15}
 print_date=$(date +'%F %T')
 
 mkdir -p $logs_dir
