@@ -43,7 +43,7 @@ echo "[ $print_date ] Source directory : $source_dir" | tee -a $log_file
 echo "[ $print_date ] Destination directory : $dest_dir" | tee -a $log_file
 echo "[ $print_date ] Days : $days" | tee -a $log_file
 
-if [ -z $files ]; then
+if [ -z "$files" ]; then
     echo -e "[ $print_date ] No files found for archiveing ... $Y SKIPPING $N" | tee -a $log_file
     exit 1
 else
