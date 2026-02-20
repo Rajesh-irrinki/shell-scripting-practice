@@ -19,7 +19,7 @@ if [ $UID -ne 0 ]; then
 fi
 
 print_usage() {
-    echo -e "sudo backup <SOURCE_DIR> <DESTINATION_DIR> <DAYS> default:15 days" | tee -a $log_file
+    echo -e "$R sudo backup <SOURCE_DIR> <DESTINATION_DIR> <DAYS> default:15 days $N" | tee -a $log_file
     exit 1
 }
 
