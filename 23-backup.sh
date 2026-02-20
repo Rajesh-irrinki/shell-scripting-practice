@@ -52,7 +52,7 @@ else
     timestamp=$(date +'%F-%H-%M-%S')
     zip_file_name="$dest_dir/app-logs-$timestamp.tar.gz"
     echo "[ $print_date ] Archeive name: $zip_file_name" | tee -a $log_file
-    tar -cvzf $zip_file_name $files
+    tar -cvzf $zip_file_name $files &>>$log_file
 
     if [ -f $zip_file_name ]; then
         echo -e "[ $print_date ] Archieving is$G success $N" | tee -a $log_file
